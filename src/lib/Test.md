@@ -1,4 +1,10 @@
+<script>
+    import Nested from './Nested.md'
+</script>
+
 ### Hello world
+
+<Nested/>
 
 This is text
 

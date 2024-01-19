@@ -9,7 +9,7 @@ dateAdded: 2022-06-22
 dateUpdated: 2022-06-22
 url: null
 image: null
-draft: true
+draft: false
 type: rpblog
 ---
  
@@ -23,7 +23,7 @@ Adding this package also pulls in the "Microsoft.Extensions.Configuration.Abstra
 
 **Step 3.** Right-click the `appsettings.json` file to show its Properties window. Then set its "Copy to Output Directory" property to "Copy always." This ensures the `appsettings.json` file is copied to the Debug or Release folder every time the project is built.
 
-![](https://rogerpence.dev/wp-content/uploads/2022/06/appsettings.json-copy-always-1.png)
+![AppSettings with Json](https://rogerpence.dev/wp-content/uploads/2022/06/appsettings.json-copy-always-1.png)
 
 Figure 1. Set "Copy to Output Directory" property
 
