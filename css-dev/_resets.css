@@ -1,0 +1,306 @@
+/* @layer base { */
+    
+    :root {
+        @custom-media --media-small       (width <= 768px); 
+        @custom-media --media-medium      (width >  768px) and (width <= 1024px); 
+        @custom-media --media-large       (width > 1024px) and (width <= 1920px); 
+        @custom-media --media-jumbo       (width > 1920px);
+
+        @custom-media --lt-large       (width <  1024px);
+        @custom-media --eq-small       (width <= 768px); 
+        @custom-media --eq-medium      (width >  768px) and (width <= 1024px); 
+        @custom-media --eq-large       (width > 1024px) and (width <= 1920px); 
+        @custom-media --eq-jumbo       (width > 1920px);
+
+        --default:                 red;
+
+
+        /*
+        Find horizontal overflow culprits.
+        */
+        /* * {
+            outline: 1px solid #f00 !important;
+          } */
+    
+        /* --brand-color:             #004477; */
+        /* --brand-color:             #002c4d; */
+        --brand-color:             #0a2c4c;
+
+        
+        --accent-color:            #f7640f;
+        --primary-bg-color:        var(--default);
+        --secondary-bg-color:      var(--default);    
+
+        --page-bg-color:           #c6d2e2;
+        --page-bg-color:           #011627;
+
+        --pre-bg-color:            color-mix(in srgb, var(--page-bg-color), black 10%);
+        --code-bg-color:           color-mix(in srgb, var(--page-bg-color), black 5%);
+        --header-bg-color:         #fff;
+        --footer-bg-color:         #2b2b2b;
+
+        --nav-bg-color:            var(--gray-3);        
+        --nav-bg-color-hover:      color-mix(in srgb, var(--nav-bg-color), white 25%);
+        --nav-color:               var(--gray-9);
+        --nav-item-hover-bg-color: var(--gray-7);
+        --sidebar-bg-color:        #ebebeb;
+
+        --anchor-text-color:       var(--default);
+        --anchor-underline-color:  var(--accent-color);
+        --anchor-hover-color:      var(--default);
+
+        --button-bg-color:         var(--default);
+        --button-text-color:       var(--default);
+
+        --menu-active-bg-color:    var(--default);
+        --menu-bg-color:           var(--default);
+
+        --text-color:              #191818;
+        --text-color:        whitesmoke;
+        --text-color-light-dim:    color-mix(in srgb, var(--text-color-light), black 30%);
+       
+        --danger-bg-color:         var(--red-9);
+        --error-bg-color:          var(--red-9);
+        --info-bg-color:           var(--brown-6);
+        --ok-color:                var(--green-9);
+        --warning-bg-color:        var(--yellow-6);        
+        --ok-cancel-color:         var(--indigo-6);
+
+        --small-radius:  var(--size-1);
+
+        --input-element-spacing: var(--size-5);
+
+        --space-after-h1: var(--size-4);
+        --paragraph-spacing: var(--size-2);
+    
+        --paragraph-text-size: 1.125rem;
+     
+    }
+
+    /* Start of Andy Bell's reset */
+
+    *,  *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    canvas {
+		pointer-events: none;
+	}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+
+/* Stop background scroll with HTML dialog element */
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+/* dialog {
+    z-index: 0;
+    pointer-events: none;
+    display: none;
+} */
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+/* a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+} */
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 7em;
+}
+
+fieldset {
+    border: none;
+}
+
+/* End of Andy Bell's reset */
+
+    /* * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    } */
+
+    :where(a:not([class])), .default-anchor {
+        color: var(--text-color);
+        text-decoration: underline;
+        text-decoration-skip-ink: auto;
+        text-underline-offset: .3rem;
+        text-decoration-style: solid;
+        text-decoration-color: var(--accent-color);
+        text-decoration-thickness: 1px;  
+    }    
+
+    :where(a:not([class]):hover), .default-anchor:hover {
+        text-decoration-thickness: 4px;
+        /* font-weight: 900; */
+    } 
+
+    :where(button.fake-anchor) {
+        color: var(--text-color);
+        text-decoration: underline;
+        text-decoration-skip-ink: auto;
+        text-underline-offset: .3rem;
+        text-decoration-style: solid;
+        text-decoration-color: var(--accent-color);
+        text-decoration-thickness: 1px;  
+
+        background-color: transparent;
+        border: none;
+        text-align: left; 
+        cursor: pointer;
+    }
+
+    :where(strong) {
+        font-weight: 600;
+    }
+
+    :where(pre) {
+        margin-bottom: 1rem;        
+        padding-inline: .7rem; 
+        padding-block: .7rem;
+        background-color: var(--pre-bg-color);
+        border-radius: var(--small-radius);;
+    }
+
+    :where(code):not(pre>code) {
+         font-weight: 500;
+         font-style: italic;
+    }
+
+
+    :where(button.fake-anchor:hover) {
+        text-decoration-thickness: 4px;
+    }
+
+    :where(ul, ol) {
+        list-style: none;
+    } 
+
+    body {
+        font-family: system-ui, 'Atkinson Hyperlegible', sans-serif;
+        /* font-family: 'Open Sans', 'Atkinson Hyperlegible', sans-serif; */
+        background-color: var(--page-bg-color);
+        color: var(--text-color);
+    }
+
+    .wrapper {
+        max-width: 1080px;
+        margin: 0 auto; 
+        padding: 2rem;
+    }
+
+    
+
+    /* * {
+        outline: 1px solid #f00 !important;
+      } */
+
+      .base-button {
+        min-width: 100px;
+        color: var(--brand-color);
+        padding-inline: 1rem;
+        padding-block: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block; 
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        box-shadow:inset 1px 1px 1px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+        background: var(--accent-color);
+      }
+
+      .base-button:hover {
+        /* background-color:   color-mix(in srgb, var(--accent-color), white 15%);         */
+        background-color:   color-mix(in srgb, var(--accent-color), yellow 25%);        
+      }
+
+      .base-button:active {
+        top: 2px;
+      }
+
+      .display-none {
+        display: none;
+      }
+
+      table {
+        border-collapse: collapse;
+        font-family: Tahoma, Geneva, sans-serif;
+        margin-bottom: 1.5rem;
+    }
+    table td {
+        padding: 15px;
+    }
+    table thead th {
+        background-color: #54585d;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 13px;
+        border: 1px solid #54585d;
+    }
+    table tbody td {
+        color: #636363;
+        border: 1px solid #dddfe1;
+    }
+    table tbody tr {
+        background-color: #f9fafb;
+    }
+    table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }

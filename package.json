@@ -7,7 +7,9 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"postcss:build": "postcss ./css-dev/style.css ---dir ./src --env production --map",
+		"postcss:watch": "postcss ./css-dev/style.css ---dir ./src --watch --map --verbose --env development"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -16,10 +18,21 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
 		"mdsvex": "^0.11.0",
+		"open-props": "^1.6.17",
+		"postcss": "^8.4.33",
+		"postcss-cli": "^11.0.0",
+		"postcss-custom-media": "^10.0.2",
+		"postcss-import": "^16.0.0",
+		"postcss-jit-props": "^1.0.14",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.5",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@csstools/postcss-global-data": "^2.1.1",
+		"@fullhuman/postcss-purgecss": "^5.0.0",
+		"cssnano": "^6.0.3"
+	}
 }
