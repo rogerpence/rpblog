@@ -4,7 +4,7 @@ import { getQueryStringObject } from '$lib/utils.js';
 async function getAllPosts() {
 	let posts = [];
 
-	const paths = import.meta.glob('/src/posts/*.md', { eager: true });
+	const paths = import.meta.glob('/src/routes/markdown/posts/*.md', { eager: true });
 
 	for (const path in paths) {
 		const file = paths[path];
