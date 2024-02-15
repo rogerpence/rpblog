@@ -10,7 +10,7 @@ export const load = async ({ params }) => {
 	//console.log(params);
 
 	const post = await import(`../../markdown/posts/${params.slug}.md`);
-	console.log('post', post);
+	//console.log('post', post);
 
 	// console.log(post.default);
 	// console.log(post.metadata);
